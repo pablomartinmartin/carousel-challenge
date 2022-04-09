@@ -1,0 +1,99 @@
+
+//colors
+$base-color: rgb(212, 200, 224);
+$shadow-color: rgb(228, 224, 237);
+$font-color: #221236;
+
+//units
+$max: 50;
+$offset: 2;
+$unit: 'px';
+
+//mixins
+
+//spacing generator receives the className (i.e.: .p-x-) and the styleName to create the property (i.e.: padding). 
+//Offset means how often will have a spacing class
+@mixin spacing-generator($className, $styleName) {
+  $i: 0;
+
+  @while $i <= $max {
+    #{$className + $i} {
+      #{$styleName}: #{$i + $unit}
+      }
+      $i: $i + $offset
+  }
+}
+
+@mixin fade-in-animation($animation, $delay) {
+  animation: $animation 1s ease-in-out $delay 1 normal forwards;
+}
+
+
+@mixin borderRadius {
+  border-radius: 10px;
+}
+
+//spacing generators for Margins & Paddings
+@include spacing-generator('.p-x-', 'padding');
+@include spacing-generator('.p-l-', 'padding-left');
+@include spacing-generator('.p-r-', 'padding-right');
+@include spacing-generator('.p-b-', 'padding-bottom');
+@include spacing-generator('.p-t-', 'padding-top');
+@include spacing-generator('.m-x-', 'margin');
+@include spacing-generator('.m-l-', 'margin-left');
+@include spacing-generator('.m-r-', 'margin-right');
+@include spacing-generator('.m-b-', 'margin-bottom');
+@include spacing-generator('.m-t-', 'margin-top');
+
+
+//keyframes for animations
+@keyframes fadeInActive {
+  0% {
+    opacity: 0.7;
+    transform: translateX(3px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInInActive {
+  0% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+//Commons classes mostly Flex Classes
+.d-flex {
+  display: flex;
+}
+
+.f-column {
+  flex-direction: column;
+}
+
+.f-row {
+  flex-direction: row;
+}
+
+.f-justify-content {
+  &--center {
+    justify-content: center;
+  }
+}
+
+.f-align-items {
+  &--center {
+    align-items: center;
+  }
+}
+
+.full-height {
+  height: 100vh;
+}
