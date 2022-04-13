@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
-# Shibnobi Gaming Coding Challenge
+# Carousel Gaming Coding Challenge
 
 ## Overview
 
@@ -24,3 +24,5 @@ Use the below mockup to create a carousel that displays all the game options. Th
 1. Add tests. The basic reducer and component tests have already been setup using `@testing-library` and `jest`. 
 2. Add cross-broswer support for Firefox. Firefox does not currently support certain CSS properties that facilitate this design. Get creative and stray from the mockup if you want to or need to!
 3. Add animations - whatever you think looks good!
+
+#### Important this project runs using node version 16

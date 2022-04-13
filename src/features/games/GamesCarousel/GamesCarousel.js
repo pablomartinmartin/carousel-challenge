@@ -9,6 +9,7 @@ import Loader from "../../loader/Loader";
 const GamesCarousel = ({ delay = 3000, slidesQuantity = 5 }) => {
   const dispatch = useDispatch();
   const { games, loading } = useSelector(gamesSelector);
+
   const timeoutRef = React.useRef(null);
 
   const [activeIndex, setActiveIndex] = React.useState(3);
